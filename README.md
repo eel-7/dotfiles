@@ -8,6 +8,8 @@ To apply the configuration for a program of your choice you have 2 options.
 2. from inside `~/dotfiles/` run the command `stow <example>` to create a symlink of the configuration files of `<example>` in `~/.config/`.
 This method requires `stow` to be installed.
 
+## Included configuration files
+
 - [X] nvim
 - [X] kitty
 - [X] picom
