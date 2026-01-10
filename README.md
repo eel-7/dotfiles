@@ -13,3 +13,5 @@ This method requires `stow` to be installed.
 - [X] nvim
 - [X] kitty
 - [X] picom
+- [X] polybar
+- [X] i3status
