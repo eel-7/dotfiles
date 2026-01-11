@@ -9,6 +9,10 @@
 general {
         colors = true
         interval = 5
+        output_format = "i3bar"
+        color_good = "#306D4D"
+        color_degraded = "#696323"
+        color_bad = "#C21313"
 }
 
 order += "volume master"
