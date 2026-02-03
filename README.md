@@ -15,3 +15,4 @@ This method requires `stow` to be installed.
 - [X] picom
 - [X] polybar
 - [X] i3status
+- [X] i3
