@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-# exec_always --no-startup-id killall polybar
-# exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id picom
 exec_always feh --bg-scale ~/Pictures/pentax-k1000/FR0002P07.JPG
 
@@ -215,17 +215,17 @@ client.placeholder      #000000 #0C0C0C #F9F8F5 #000000   #0C0C0C
 
 client.background       #FFFFFF
 
-bar {
-        status_command i3status
-                colors {
-                        background #1F1F28
-                                statusline #F9F8F5
-                                separator  #666666
-
-                                focused_workspace  #6693BF #4D699B #F9F8F5
-                                active_workspace   #333333 #222222 #F9F8F5
-                                inactive_workspace #333333 #222222 #888888
-                                urgent_workspace   #2F343A #C21313 #F9F8F5
-                                binding_mode       #2F343A #C21313 #F9F8F5
-                }
-}
+# bar {
+#         status_command i3status
+#                 colors {
+#                         background #1F1F28
+#                                 statusline #F9F8F5
+#                                 separator  #666666
+#
+#                                 focused_workspace  #6693BF #4D699B #F9F8F5
+#                                 active_workspace   #333333 #222222 #F9F8F5
+#                                 inactive_workspace #333333 #222222 #888888
+#                                 urgent_workspace   #2F343A #C21313 #F9F8F5
+#                                 binding_mode       #2F343A #C21313 #F9F8F5
+#                 }
+# }
