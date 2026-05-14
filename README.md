@@ -1,7 +1,8 @@
 # dotfiles
 Configuration files for various programs
 
-Clone this directory into you home directory. The file path will then be `~/dotfiles/`.
+Clone this directory into you home directory. The file path will then be `~/dotfiles/`. The neovim configurations files are included as a submodule so should be cloned appropriately:
+`git clone ... --recurse-submodules`
 Each directory in this repository is of the form `~/dotfiles/<example>/.config/<example>/`.
 To apply the configuration for a program of your choice you have 2 options.
 1. copy the directory `/path/to/repo/<example>/.config/<example>/` to `~/.config/`
