@@ -19,7 +19,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "auto",
+    scale    = "1",
 })
 
 
@@ -43,11 +43,13 @@ local menu        = "rofi -show drun"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function () 
+  -- hl.exec_cmd(terminal)
+  hl.exec_cmd("nm-applet")
+  -- hl.exec_cmd("waybar & hyprpaper & firefox")
+  hl.exec_cmd("waybar & hyprpaper")
+  hl.exec_cmd("xhost +local:")
+end)
 
 
 -------------------------------
@@ -88,16 +90,25 @@ hl.config({
     general = {
         gaps_in  = 2,
         gaps_out = 5,
+        float_gaps = 0,
+        gaps_workspaces = 0,
 
         border_size = 2,
 
         col = {
             active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
+            nogroup_border = "0xffffaaff",
+            nogroup_border_active = "0xffff00ff",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
+        extend_border_grab_area = 15,
+        hover_icon_on_border = true,
+        resize_corner = 0,
+
+        no_focus_fallback = true,
 
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
@@ -111,7 +122,8 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 0.8,
+        inactive_opacity = 0.9,
+        fullscreen_opacity = 1.0,
 
         shadow = {
             enabled      = true,
@@ -183,7 +195,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
-    },
+    }
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
@@ -207,7 +219,8 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        background_color = "0x1c7ea6ff",
     },
 })
 
