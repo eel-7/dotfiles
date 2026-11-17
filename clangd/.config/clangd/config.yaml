@@ -1,2 +1,2 @@
 CompileFlags:                     # Tweak the parse settings
-  Add: [-xc++, -I, /usr/local/root/include, -Wall]             # treat all files as C++, enable more warnings
+  Add: [-xc++, -I, /usr/local/root/include, /usr/local/geant4/geant4-v11.4.3-install/include/Geant4, -Wall]             # treat all files as C++, enable more warnings
