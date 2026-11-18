@@ -35,9 +35,15 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # bindsym Control+Mod1+l exec "i3lock -c 6693BF"
-bindsym Control+Mod1+l exec "i3lock --image=/home/elija/Pictures/pentax-k1000/FR0003P23.JPG -F --nofork"
-# bindsym Control+Mod1+l exec "convert -size 1840x1232 /home/elija/Pictures/pentax-k1000/FR0003P23.JPG RGB:- | i3lock --raw 1920x1080:rgb --image /dev/stdin -L"
-# bindsym Control+Mod1+l exec "convert /home/elija/Pictures/pentax-k1000/FR0003P23.JPG -resize $(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/1/') RGB:- | i3lock --raw $(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/1/'):rgb --image /dev/stdin"
+# bindsym Control+Mod1+l exec "i3lock --image=/home/elija/Pictures/pentax-k1000/FR0003P23.JPG -F --nofork"
+# bindsym Control+Mod1+l exec i3lock -i /usr/share/backgrounds/FR0006P22.JPG --nofork
+bindsym Control+Mod1+l exec magick /usr/share/backgrounds/FR0006P22.JPG PNG:- | i3lock -i /dev/stdin --nofork
+# bindsym Control+Mod1+l exec i3lock -i /home/eelija113/Pictures/reconstructed_tracks_4_layers.png --nofork
+# bindsym Control+Mod1+l exec i3lock -i ~/.config/i3/FR0006P22.JPG --raw --nofork
+# bindsym Control+Mod1+l exec "convert -size 1840x1232 ~/.config/i3/FR0006P22.JPG RGB:- | i3lock --raw=1920x1080:rgb --image=/dev/stdin --nofork"
+# bindsym Control+Mod1+l exec "convert ~/.config/i3/FR0006P22.JPG RGB:- | i3lock --raw=1920x1080:rgb --image=/dev/stdin --nofork"
+# bindsym Control+Mod1+l exec "convert ~/.config/i3/FR0006P22.JPG RGB:- | i3lock --raw=$(~/.config/i3/get_geometry.sh):rgb --image=/dev/stdin --nofork"
+# bindsym Control+Mod1+l exec "convert ~/.config/i3/FR0006P22.JPG -resize $(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/1/') RGB:- | i3lock --raw=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/1/'):rgb --image=/dev/stdin --nofork"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -70,7 +76,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
